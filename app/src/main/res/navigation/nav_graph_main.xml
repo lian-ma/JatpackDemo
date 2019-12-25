@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/oneFragment">
+
+    <fragment
+        android:id="@+id/oneFragment"
+        android:name="com.smodock.jetpackdemo.fragment.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one">
+        <action
+            android:id="@+id/action_oneFragment_to_twoFragment2"
+            app:destination="@id/twoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:launchSingleTop="false"/>
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="我是默认值" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoFragment"
+        android:name="com.smodock.jetpackdemo.fragment.TwoFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" >
+        <action
+            android:id="@+id/action_twoFragment_to_threeFragment"
+            app:destination="@id/threeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:launchSingleTop="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/threeFragment"
+        android:name="com.smodock.jetpackdemo.fragment.ThreeFragment"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three">
+        <action
+            android:id="@+id/action_threeFragment_to_oneFragment"
+            app:destination="@id/oneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:launchSingleTop="false"/>
+    </fragment>
+</navigation>
